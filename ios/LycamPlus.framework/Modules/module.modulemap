@@ -1,0 +1,6 @@
+framework module LycamPlus {
+  umbrella header "LycamPlus.h"
+
+  export *
+  module * { export * }
+}
