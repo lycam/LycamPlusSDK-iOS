@@ -11,11 +11,6 @@
 #import "LCPDefines.h"
 #import "LCPConst.h"
 
-//#define SERVIER_BOOT_URL @"http://192.168.1.105:1337/bootstrap"
-//#define LCP_SERVICE_API_ROOT_URL @"http://192.168.1.105:1337"
-//#define SERVIER_BOOT_URL @"http://192.168.1.9:1337/bootstrap"
-//#define LCP_SERVICE_API_ROOT_URL @"http://192.168.1.9:1337"
-
 
 /**
  *  Block executed when stream is ready.
@@ -50,6 +45,7 @@ typedef void (^LCPSignOutCompletionBlock)(BOOL success, NSError* error);
 @property (nonatomic,readonly) BOOL useAdaptiveBitrate;
 @property (nonatomic,readonly) NSUInteger segmentDurationSeconds;
 @property (nonatomic,readonly) NSInteger hlsListSize;
+@property (nonatomic) BOOL useSSL;
 
 //@end
 
@@ -57,13 +53,6 @@ typedef void (^LCPSignOutCompletionBlock)(BOOL success, NSError* error);
 /// @name Setup
 ///-------------------------------
 
-/**
- *  Initilize the LycamPlus client.
- *
- *  @param key    API key from lycam.tv
- *  @param secret API secret from lycam.tv
- */
-+ (void) initWithAppKey:(NSString*)key secret:(NSString*)secret;
 
 /**
  *  Returns the active API key.
@@ -126,7 +115,25 @@ typedef void (^LCPSignOutCompletionBlock)(BOOL success, NSError* error);
 + (void) logout:(LCPSignOutCompletionBlock)completionBlock;
 
 + (void) login:(NSString*) username withPassword:(NSString *) password completion:(LCPSignInCompletionBlock)completionBlock;
+
+/**
+ *  Initilize the LycamPlus client.
+ *
+ *  @param key    API key from lycam.tv
+ *  @param secret API secret from lycam.tv
+ */
++ (void) initWithAppKey:(NSString*)key secret:(NSString*)secret;
+/**
+ *  Initilize the LycamPlus client.
+ *
+ *  @param key    API key from lycam.tv
+ *  @param secret API secret from lycam.tv
+ *  @param useSSL use SSL
+ */
++ (void) initWithAppKey:(NSString*)key secret:(NSString*)secret useSSL:(BOOL)useSSL;
+
 + (void) initWithAppKey:(NSString*)key secret:(NSString*)secret withUsername:(NSString*) username withPassword:(NSString *) password completion:(LCPSignInCompletionBlock)completionBlock;
++ (void) initWithAppKey:(NSString*)key secret:(NSString*)secret useSSL:(BOOL)useSSL withUsername:(NSString*) username withPassword:(NSString *) password completion:(LCPSignInCompletionBlock)completionBlock;
 
 @end
 

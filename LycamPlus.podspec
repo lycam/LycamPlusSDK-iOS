@@ -1,10 +1,9 @@
 Pod::Spec.new do |s|
   s.name = 'LycamPlus'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.summary = 'A short description of LycamPlus.'
   s.license = 'MIT'
   s.authors = {"no777"=>"wt@lycam.tv"}
-  s.homepage = 'https://github.com/lycam/LycamPlusSDK-iOS'
   s.description = ''
   s.frameworks = ["UIKit", "MobileCoreServices", "CoreMedia", "AVFoundation", "CoreLocation", "Foundation", "AudioToolbox", "CFNetwork", "SystemConfiguration", "ImageIO"]
   s.libraries = ["sqlite3", "c++"]

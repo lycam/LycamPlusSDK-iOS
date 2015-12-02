@@ -7,8 +7,8 @@
 //
 #ifndef LCPConst_h
 #define LCPConst_h
-extern NSString * const kLCPS3StreamType;
 
+extern NSString * const kLCPS3StreamType;
 extern NSString * const kLCPStreamType ;
 extern NSString * const kLCPStreamID ;
 extern NSString * const kLCPStreamUploadURL ;

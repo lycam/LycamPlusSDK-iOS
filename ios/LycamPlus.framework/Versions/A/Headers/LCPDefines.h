@@ -9,11 +9,18 @@
 #ifndef LCPDefines_h
 #define LCPDefines_h
 
+extern NSString * const kLCPServiceAPIDomain;
+extern NSString * const kLCPAPIVersion;
+extern NSString * const kLCPOAuthRootDomain;
 
+#define LCP_SERVICE_API_URL [LycamPlus sharedInstance].useSSL?[NSString stringWithFormat:@"https://%@/v%@",kLCPServiceAPIDomain,kLCPAPIVersion]:[NSString stringWithFormat:@"http://%@/v%@",kLCPServiceAPIDomain,kLCPAPIVersion]
 
-#define LCP_SDK_VERSION @"1.0"
-#define LCP_API_VERSION @"1.0"
-#define LCP_SERVICE_API_ROOT_URL @"http://api.lycamplus.f77f.cn:7777"
-#define LCP_SERVICE_API_ROOT_URL @"http://192.168.1.9:1337"
+#define KLCP_OAUTH2_URL [LycamPlus sharedInstance].useSSL?[NSString stringWithFormat:@"https://%@/%@",kLCPOAuthRootDomain,@"oauth2/token/"]:[NSString stringWithFormat:@"http://%@/%@",kLCPOAuthRootDomain,@"oauth2/token/"]
+
+#define KLCP_STREAM_START_URL @"stream/start"
+#define KLCP_STREAM_STOP_URL @"stream"
+#define KLCP_STREAM_UPDATE_URL @"stream"
+#define KLCP_STREAM_URL @"stream"
+
 
 #endif /* LCPDefines_h */
